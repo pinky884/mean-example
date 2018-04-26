@@ -1,0 +1,15 @@
+<p>This is history page!</p>
+<span>{{text}}</span>
+
+<ul ng-repeat="value in historyData | temparatureFilter">
+	<li>{{value.day | uppercase}} : {{value.temp}}</li>
+</ul>
+<section>
+	<span>with min temp filter</span>
+	Enter minimum temperature: <input type="number" ng-model="minTemp"></input>
+	<div ng-show="minTemp > 0">
+		<ul ng-repeat="value in historyData | filterTempWithMinimum : minTemp">
+			<li>{{value.day | uppercase}} : {{value.temp}}</li>
+		</ul>
+	<div>
+<section>
